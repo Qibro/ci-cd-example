@@ -1,0 +1,23 @@
+# os yang di gunakan
+os:
+  - linux
+
+# bahasa
+language: php
+# distro 
+dist: trusty
+
+php:
+  - '7.1'
+
+# grouping  task
+jobs:
+  include:
+  # melakukan testing 
+    - stage: "Tests"                
+      name: "Unit Test PHP"  
+      script: 
+      - travis_retry composer self-update
+      - travis_retry composer install --prefer-source --no-interaction
+      - cp .env.example .env
+      - php artisan key:generate

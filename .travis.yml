@@ -4,8 +4,6 @@ os:
 
 # bahasa
 language: php
-# distro 
-dist: trusty
 
 php:
   - '7.1'
